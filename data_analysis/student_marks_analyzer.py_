@@ -1,0 +1,53 @@
+import pandas as pd
+
+def analyze_marks(file_path):
+    try:
+        df = pd.read_csv(file_path)
+
+        print("Student Marks File Loaded Successfully!\n")
+        print(df)
+
+        # Basic stats
+        average_marks = df["marks"].mean()
+        max_marks = df["marks"].max()
+        min_marks = df["marks"].min()
+
+        topper = df.loc[df["marks"].idxmax(), "name"]
+        lowest_scorer = df.loc[df["marks"].idxmin(), "name"]
+
+        print("\n Analysis Report")
+        print("Average Marks:", average_marks)
+        print("Topper:", topper, "-", max_marks)
+        print("Lowest Scorer:", lowest_scorer, "-", min_marks)
+
+        # Pass / Fail count (pass = marks >= 40)
+        pass_count = (df["marks"] >= 40).sum()
+        fail_count = (df["marks"] < 40).sum()
+
+        print("Pass Count:", pass_count)
+        print("Fail Count:", fail_count)
+
+        # Save report to CSV
+        report = {
+            "average_marks": [average_marks],
+            "topper": [topper],
+            "top_marks": [max_marks],
+            "lowest_scorer": [lowest_scorer],
+            "lowest_marks": [min_marks],
+            "pass_count": [pass_count],
+            "fail_count": [fail_count]
+        }
+
+        report_df = pd.DataFrame(report)
+        report_df.to_csv("marks_report.csv", index=False)
+
+        print("\n Report saved as marks_report.csv")
+
+    except FileNotFoundError:
+        print(" File not found. Please check students.csv file.")
+    except Exception as e:
+        print("Error:", e)
+
+
+if __name__ == "__main__":
+    analyze_marks("students.csv")
