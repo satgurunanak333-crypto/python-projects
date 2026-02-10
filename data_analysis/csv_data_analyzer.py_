@@ -1,0 +1,32 @@
+import pandas as pd
+
+def analyze_csv(file_path):
+    try:
+        df = pd.read_csv(file_path)
+
+        print("CSV File Loaded Successfully!\n")
+
+        # Basic info
+        print(" Number of Rows:", df.shape[0])
+        print("Number of Columns:", df.shape[1])
+        print("\n Column Names:")
+        print(df.columns.tolist())
+
+        # Summary statistics
+        print("\n Summary Statistics:")
+        print(df.describe())
+
+        # Save summary to file
+        summary_file = "summary.csv"
+        df.describe().to_csv(summary_file)
+        print(f"\n Summary saved to {summary_file}")
+
+    except FileNotFoundError:
+        print("File not found. Please check the file name and path.")
+    except Exception as e:
+        print("Error:", e)
+
+
+if __name__ == "__main__":
+    file_name = "data.csv"   # CSV file in same folder
+    analyze_csv(file_name)
