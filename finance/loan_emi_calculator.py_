@@ -1,0 +1,34 @@
+def calculate_emi(principal, annual_rate, years):
+    monthly_rate = annual_rate / (12 * 100)  # convert % to monthly decimal
+    months = years * 12
+
+    if monthly_rate == 0:
+        emi = principal / months
+    else:
+        emi = principal * monthly_rate * (1 + monthly_rate) ** months / ((1 + monthly_rate) ** months - 1)
+
+    total_payment = emi * months
+    total_interest = total_payment - principal
+
+    return emi, total_interest, total_payment
+
+
+def main():
+    try:
+        principal = float(input("Enter loan amount (₹): "))
+        annual_rate = float(input("Enter annual interest rate (%): "))
+        years = int(input("Enter loan tenure (years): "))
+
+        emi, total_interest, total_payment = calculate_emi(principal, annual_rate, years)
+
+        print("\n Loan EMI Details")
+        print(f"Monthly EMI: ₹{emi:.2f}")
+        print(f"Total Interest Payable: ₹{total_interest:.2f}")
+        print(f"Total Amount Payable: ₹{total_payment:.2f}")
+
+    except ValueError:
+        print("Invalid input. Please enter numeric values only.")
+
+
+if __name__ == "__main__":
+    main()
