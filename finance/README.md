@@ -1,45 +1,53 @@
 # 💰 Finance Projects (Python)
 
-This folder contains beginner to intermediate level finance-related Python projects focused on real-world use cases like personal finance analysis and loan calculations.
+This folder contains beginner to intermediate level finance-related Python projects focused on practical real-world use cases.
 
 ---
 
-## 1️⃣ Personal Finance Summary
+## 📊 1️⃣ Personal Finance Summary
 
-### 📌 Description  
+### 📌 Description
 A Python script that analyzes personal income and expenses and generates a financial summary.
 
-### 🔹 Features  
+### ✨ Features
 - Calculates total income  
 - Calculates total expenses  
-- Shows savings  
-- Category-wise expense summary  
+- Shows total savings  
+- Category-wise expense breakdown  
 
-### 🛠 Tech Stack  
+### 🛠 Tech Stack
 - Python  
 - Pandas  
 
-### ▶️ How to Run  
+### ▶️ How to Run
+
 ```bash
 python personal_finance_summary.py
+```
 
-## 2️⃣ Loan EMI Calculator
+---
+
+## 🏦 2️⃣ Loan EMI Calculator
 
 ### 📌 Description
+A Python program that calculates Loan EMI (Equated Monthly Installment) based on:
+- Principal amount  
+- Interest rate  
+- Loan tenure  
 
-A Python program to calculate loan EMI (Equated Monthly Installment) based on user input.
-
-###🔹 Features
-
-- Monthly EMI calculation
-
-- Total interest payable
-
-- Total amount payable
+### ✨ Features
+- Monthly EMI calculation  
+- Total interest payable  
+- Total amount payable  
+- User-input based calculation  
 
 ### 🛠 Tech Stack
+- Python  
 
-- Python
+### ▶️ How to Run
 
-▶️ How to Run
+```bash
 python loan_emi_calculator.py
+```
+
+---
