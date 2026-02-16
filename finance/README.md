@@ -51,3 +51,40 @@ python loan_emi_calculator.py
 ```
 
 ---
+# 3) Personal Finance Dashboard
+
+A Python-based project to help users **track and analyze personal finances**. This dashboard allows you to input expenses and income, categorize them, and visualize financial trends through charts and summaries.
+
+---
+
+## **Features**
+
+- Add income and expenses with categories (e.g., Food, Rent, Bills, Entertainment)  
+- Generate **summary tables** for monthly or yearly spending  
+- Visualize spending trends with **bar and pie charts**  
+- Track savings and budget efficiency  
+- Export data to CSV for further analysis  
+
+---
+
+## **Tech Stack**
+
+- **Python** – Core programming and logic  
+- **Pandas** – Data management and calculations  
+- **Matplotlib / Seaborn** – Data visualization  
+- **CSV** – Input/output of financial data  
+- **Basic financial calculations** – Budget, savings, and expense tracking  
+
+---
+
+## **How to Use**
+
+1. Clone the repository:  
+   ```bash
+   git clone <repository-url>
+2. Install the required packages:
+   pip install pandas matplotlib seaborn
+3. Run the main python script:
+   python personal_finance_dashboard.py
+
+   
